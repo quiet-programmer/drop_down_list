@@ -142,7 +142,7 @@ class _MainBodyState extends State<MainBody> {
                       alignment: Alignment.centerRight,
                       child: ElevatedButton(
                           onPressed: () {
-                            List<SelectedListItem> selectedList = widget
+                            List<dynamic> selectedList = widget
                                 .dropDown.dataList
                                 .where((element) => element.isSelected == true)
                                 .toList();
