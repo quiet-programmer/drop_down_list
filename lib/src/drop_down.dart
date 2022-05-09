@@ -32,6 +32,9 @@ class DropDown {
   /// This will give the call back to the selected item (single) from list.
   final Function(String)? selectedItem;
 
+  /// This will give the call back to the selected item (single) from list.
+  final Function(String)? selectedItemValue;
+
   /// This will give selection choise for single or multiple for list.
   final bool enableMultipleSelection;
 
@@ -47,6 +50,7 @@ class DropDown {
     required this.dataList,
     this.selectedItems,
     this.selectedItem,
+    this.selectedItemValue,
     required this.enableMultipleSelection,
   });
 }
@@ -218,6 +222,12 @@ class _MainBodyState extends State<MainBody> {
                               (mainList[index].value != null) ?
                                 mainList[index].value ?? '' :
                                   mainList[index].name
+                            );
+                            widget.dropDown.selectedItemValue
+                                ?.call(
+                                (mainList[index].value != null) ?
+                                mainList[index].value ?? '' :
+                                mainList[index].name
                             );
                             _onUnfocusKeyboardAndPop();
                           },
