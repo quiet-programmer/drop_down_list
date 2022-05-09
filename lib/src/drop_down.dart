@@ -85,8 +85,9 @@ class SelectedListItem {
   bool isSelected;
   String name;
   String ?value;
+  final Function(String)? onTap;
 
-  SelectedListItem( this.isSelected,  this.name, {this.value});
+  SelectedListItem( this.isSelected,  this.name, {this.value, this.onTap});
 }
 
 /// This is main class to display the bottom sheet body.
@@ -142,7 +143,7 @@ class _MainBodyState extends State<MainBody> {
                       alignment: Alignment.centerRight,
                       child: ElevatedButton(
                           onPressed: () {
-                            List<dynamic> selectedList = widget
+                            List<SelectedListItem> selectedList = widget
                                 .dropDown.dataList
                                 .where((element) => element.isSelected == true)
                                 .toList();
