@@ -84,10 +84,10 @@ class DropDownState {
 class SelectedListItem {
   bool isSelected;
   String name;
-  String ?value;
+  String? value;
   final Function(String)? onTap;
 
-  SelectedListItem( this.isSelected,  this.name, {this.value, this.onTap});
+  SelectedListItem(this.isSelected, this.name, {this.value, this.onTap});
 }
 
 /// This is main class to display the bottom sheet body.
@@ -228,7 +228,7 @@ class _MainBodyState extends State<MainBody> {
                                 ?.call(
                                 (mainList[index].value != null) ?
                                 mainList[index].value ?? '' :
-                                mainList[index].name
+                                mainList[index].value!
                             );
                             _onUnfocusKeyboardAndPop();
                           },
