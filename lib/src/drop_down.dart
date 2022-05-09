@@ -189,7 +189,7 @@ class _MainBodyState extends State<MainBody> {
                 itemBuilder: (context, index) {
                   return InkWell(
                     child: Container(
-                      color: Colors.white,
+                      // color: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
                         child: ListTile(
