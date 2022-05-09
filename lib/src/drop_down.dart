@@ -224,9 +224,7 @@ class _MainBodyState extends State<MainBody> {
                             );
                             widget.dropDown.selectedItemValue
                                 ?.call(
-                                (mainList[index].value != null) ?
-                                mainList[index].value ?? '' :
-                                mainList[index].name
+                                (mainList[index].value!)
                             );
                             _onUnfocusKeyboardAndPop();
                           },
