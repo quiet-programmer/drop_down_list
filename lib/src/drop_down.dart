@@ -85,8 +85,8 @@ class SelectedListItem {
   bool isSelected;
   String name;
   String id;
-  String? value;
-  final Function(String)? onTap;
+  dynamic value;
+  final VoidCallback? onTap;
 
   SelectedListItem(this.isSelected, this.name, this.id,{this.value, this.onTap});
 }
@@ -221,7 +221,11 @@ class _MainBodyState extends State<MainBody> {
                         : () {
                             widget.dropDown.selectedItem
                                 ?.call(
-                              (mainList[index].name)
+                              (mainList[index].name),
+                            );
+                            widget.dropDown.selectedItem
+                                ?.call(
+                              (mainList[index].value),
                             );
                             widget.dropDown.selectedItemValue
                                 ?.call(
