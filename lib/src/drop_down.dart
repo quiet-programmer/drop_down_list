@@ -35,6 +35,9 @@ class DropDown {
   /// This will give the call back to the selected item (single) from list.
   final Function(String)? selectedItemValue;
 
+  /// This will give the call back to the selected item (single) from list.
+  final Function(dynamic)? selectedDynamicValue;
+
   /// This will give selection choise for single or multiple for list.
   final bool enableMultipleSelection;
 
@@ -51,6 +54,7 @@ class DropDown {
     this.selectedItems,
     this.selectedItem,
     this.selectedItemValue,
+    this.selectedDynamicValue,
     required this.enableMultipleSelection,
   });
 }
@@ -223,7 +227,7 @@ class _MainBodyState extends State<MainBody> {
                                 ?.call(
                               (mainList[index].name),
                             );
-                            widget.dropDown.selectedItem
+                            widget.dropDown.selectedDynamicValue
                                 ?.call(
                               (mainList[index].value),
                             );
