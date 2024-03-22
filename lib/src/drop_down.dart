@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DropDown {
@@ -163,7 +162,7 @@ class _MainBodyState extends State<MainBody> {
                             _onUnfocusKeyboardAndPop();
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: widget.dropDown.submitButtonColor ??
+                            backgroundColor: widget.dropDown.submitButtonColor ??
                                 Colors.blue,
                             textStyle: const TextStyle(
                               fontSize: 16,
